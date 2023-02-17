@@ -1,7 +1,7 @@
 # 💳 (Monorepo) SDK Payment's
 
 Client browser sdk developed to use in browser.
-I developed to study new technologies.
+Developed to study new technologies.
 
 ## 💻 Technologies
 
