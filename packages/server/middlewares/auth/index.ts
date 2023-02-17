@@ -1,5 +1,5 @@
-import {t} from "../../config/trpc";
 import {TRPCError} from "@trpc/server";
+import {t} from "../../config/trpc";
 
 const authMiddleware = t.middleware( ({ ctx, next }) => {
     if (!ctx.user) {

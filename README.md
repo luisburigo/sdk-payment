@@ -49,4 +49,11 @@ AppSdk.on('EVENT_NAME', event => {
 |----------|----------------------|------------------------|
 | element  | string / HTMLElement | Element for render SKD |
 
+## 🚀 Next steps
+- [x] Render SDK in DOM
+- [ ] Add design System 
+- [ ] Create form to cards 
+- [ ] Simulate a order payment 
+- [ ] List all cards from user 
+- [ ] Security 
 
