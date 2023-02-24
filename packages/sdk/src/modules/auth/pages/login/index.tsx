@@ -2,6 +2,7 @@ import {trpc} from "@/config/trpc";
 import {useForm} from "react-hook-form";
 import {LoginForm} from "@/modules/auth/pages/login/types";
 import useAuthStore from "@/modules/auth/store";
+import {Button, TextField} from "@mui/material";
 
 export function Login() {
     const {setToken} = useAuthStore();
@@ -23,18 +24,25 @@ export function Login() {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input
-                    type="text"
-                    {...register('email', {
-                        required: 'Email é obrigatorio.'
-                    })}
-                />
-                <p>{formState.errors?.email?.message}</p>
-                <p>{formState.errors?.root?.message}</p>
-                <button>Login</button>
-            </form>
-        </div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <TextField
+                label="Email"
+                type="text"
+                fullWidth
+                {...register('email', {
+                    required: 'Email é obrigatorio.'
+                })}
+            />
+            <p>{formState.errors?.email?.message}</p>
+            <p>{formState.errors?.root?.message}</p>
+            <Button
+                type="submit"
+                size="large"
+                variant="contained"
+                fullWidth
+            >
+                Signin
+            </Button>
+        </form>
     )
 }

@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from '@/modules/app'
+import Core from '@/modules/core'
 import {RenderParams} from "@/main.types";
 import emitter, {Events} from "@/utils/events";
 import {trpc, trpcClient} from './config/trpc';
 import {queryClient} from "@/config/reactQuery";
 import {QueryClientProvider} from "@tanstack/react-query";
+import {CssBaseline} from "@mui/material";
 
 class AppSdk {
 
@@ -26,7 +27,9 @@ class AppSdk {
             <React.StrictMode>
                 <trpc.Provider client={trpcClient} queryClient={queryClient}>
                     <QueryClientProvider client={queryClient}>
-                        <App/>
+                        <CssBaseline>
+                            <Core/>
+                        </CssBaseline>
                     </QueryClientProvider>
                 </trpc.Provider>
             </React.StrictMode>,
