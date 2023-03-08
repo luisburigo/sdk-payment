@@ -7,6 +7,7 @@ import {trpc, trpcClient} from './config/trpc';
 import {queryClient} from "@/config/reactQuery";
 import {QueryClientProvider} from "@tanstack/react-query";
 import {CssBaseline} from "@mui/material";
+import useOrder from "@/modules/order/store";
 
 class AppSdk {
 
@@ -22,6 +23,8 @@ class AppSdk {
         const $el = typeof params.element === 'string' ?
             document.getElementById(params.element) as HTMLElement :
             params.element;
+
+        useOrder.getState().setOder(params.order);
 
         ReactDOM.createRoot($el).render(
             <React.StrictMode>

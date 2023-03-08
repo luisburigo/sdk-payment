@@ -6,10 +6,12 @@ import {createContext, t} from "./config/trpc";
 
 import userProcedures from "./modules/user/procedures";
 import cardProcedures from "./modules/cards/procedures";
+import paymentProcedures from "./modules/payments/procedures";
 
 export const appRouter = t.router({
     ...userProcedures,
     ...cardProcedures,
+    ...paymentProcedures,
 });
 
 export type AppRouter = typeof appRouter;
